@@ -1,0 +1,11 @@
+@mixin breakpoint($res) {
+  @if ($res == "avg-phone") {
+    @media (max-width: 767px) {
+      @content;
+    }
+  } @else if ($res == "small-phone") {
+    @media (max-width: 320px) {
+      @content;
+    }
+  }
+} ;

@@ -1,0 +1,454 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap");
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Rubik", sans-serif;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: inherit;
+  outline: none;
+  border: none;
+}
+
+/* 
+- Mobile: 375px
+- Desktop: 1440px
+ */
+body {
+  background-color: #f5f6fa;
+}
+
+.container {
+  width: 1440px;
+  height: 100%;
+  margin: auto;
+  padding: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 30px;
+  position: relative;
+  overflow: hidden;
+}
+
+.container .comment-container,
+.container .reply-container,
+.container .currentUser-comment,
+.container .currentUser-reply {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 20px;
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  -webkit-box-shadow: 0 10px 10px rgba(0, 0, 0, 0.01);
+          box-shadow: 0 10px 10px rgba(0, 0, 0, 0.01);
+  line-height: 1.5;
+}
+
+.container .comment-container .counter,
+.container .reply-container .counter,
+.container .currentUser-comment .counter,
+.container .currentUser-reply .counter {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 10px;
+  background-color: #f5f6fa;
+  padding: 10px 15px;
+  margin-bottom: 20px;
+  border-radius: inherit;
+}
+
+.container .comment-container .counter p,
+.container .reply-container .counter p,
+.container .currentUser-comment .counter p,
+.container .currentUser-reply .counter p {
+  color: #4f4da0;
+  font-weight: 500;
+}
+
+.container .comment-container .counter .count-btn,
+.container .reply-container .counter .count-btn,
+.container .currentUser-comment .counter .count-btn,
+.container .currentUser-reply .counter .count-btn {
+  color: #c8c6eb;
+  background-color: transparent;
+  font-weight: bold;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.container .comment-container .content,
+.container .reply-container .content,
+.container .currentUser-comment .content,
+.container .currentUser-reply .content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 20px;
+}
+
+.container .comment-container .content .info,
+.container .reply-container .content .info,
+.container .currentUser-comment .content .info,
+.container .currentUser-reply .content .info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.container .comment-container .content .info .person-info,
+.container .reply-container .content .info .person-info,
+.container .currentUser-comment .content .info .person-info,
+.container .currentUser-reply .content .info .person-info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 10px;
+}
+
+.container .comment-container .content .info .person-info .image,
+.container .reply-container .content .info .person-info .image,
+.container .currentUser-comment .content .info .person-info .image,
+.container .currentUser-reply .content .info .person-info .image {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.container .comment-container .content .info .person-info .image img,
+.container .reply-container .content .info .person-info .image img,
+.container .currentUser-comment .content .info .person-info .image img,
+.container .currentUser-reply .content .info .person-info .image img {
+  width: 35px;
+}
+
+.container .comment-container .content .info .person-info .name,
+.container .reply-container .content .info .person-info .name,
+.container .currentUser-comment .content .info .person-info .name,
+.container .currentUser-reply .content .info .person-info .name {
+  color: #324152;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.container .comment-container .content .info .person-info .date,
+.container .reply-container .content .info .person-info .date,
+.container .currentUser-comment .content .info .person-info .date,
+.container .currentUser-reply .content .info .person-info .date {
+  color: #67727e;
+  font-size: 14px;
+}
+
+.container .comment-container .content .info .reply-btn #reply-btn,
+.container .reply-container .content .info .reply-btn #reply-btn,
+.container .currentUser-comment .content .info .reply-btn #reply-btn,
+.container .currentUser-reply .content .info .reply-btn #reply-btn {
+  background-color: transparent;
+  color: #4f4da0;
+  font-weight: 500;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.container .comment-container .content .info .reply-btn #reply-btn:hover,
+.container .reply-container .content .info .reply-btn #reply-btn:hover,
+.container .currentUser-comment .content .info .reply-btn #reply-btn:hover,
+.container .currentUser-reply .content .info .reply-btn #reply-btn:hover {
+  color: #6f6dc5;
+}
+
+.container .comment-container .content .comment,
+.container .reply-container .content .comment,
+.container .currentUser-comment .content .comment,
+.container .currentUser-reply .content .comment {
+  color: #67727e;
+  font-size: 16px;
+}
+
+.container .comment-container #comment,
+.container .reply-container #comment,
+.container .currentUser-comment #comment,
+.container .currentUser-reply #comment {
+  width: 500px;
+}
+
+.container .comment-container {
+  width: 700px;
+}
+
+.container .comment-container #comment {
+  width: 600px;
+}
+
+.container .reply-container,
+.container .currentUser-reply {
+  width: 600px;
+  margin-left: 100px;
+  position: relative;
+}
+
+.container .reply-container::before,
+.container .currentUser-reply::before {
+  content: "";
+  position: absolute;
+  left: -50px;
+  background-color: #eaecf1;
+  width: 2px;
+  height: 120%;
+}
+
+.container .currentUser-comment .you,
+.container .currentUser-reply .you {
+  background-color: #4f4da0;
+  color: white;
+  padding: 1px 5px;
+  border-radius: 3px;
+  font-weight: normal;
+  font-size: 12px;
+  margin-left: 5px;
+}
+
+.container .currentUser-comment #comment,
+.container .currentUser-reply #comment {
+  width: 500px;
+}
+
+.container .currentUser-comment .currentUser-comment,
+.container .currentUser-reply .currentUser-comment {
+  width: 700px;
+}
+
+.container .currentUser-comment .btns,
+.container .currentUser-reply .btns {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-item-align: center;
+      align-self: center;
+  gap: 20px;
+}
+
+.container .currentUser-comment .edit-btn #edit-btn,
+.container .currentUser-comment .edit-btn #delete-btn,
+.container .currentUser-comment .delete-btn #edit-btn,
+.container .currentUser-comment .delete-btn #delete-btn,
+.container .currentUser-reply .edit-btn #edit-btn,
+.container .currentUser-reply .edit-btn #delete-btn,
+.container .currentUser-reply .delete-btn #edit-btn,
+.container .currentUser-reply .delete-btn #delete-btn {
+  background-color: transparent;
+  font-weight: 500;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.container .currentUser-comment .edit-btn #edit-btn,
+.container .currentUser-comment .delete-btn #edit-btn,
+.container .currentUser-reply .edit-btn #edit-btn,
+.container .currentUser-reply .delete-btn #edit-btn {
+  color: #4f4da0;
+}
+
+.container .currentUser-comment .edit-btn #edit-btn:hover,
+.container .currentUser-comment .delete-btn #edit-btn:hover,
+.container .currentUser-reply .edit-btn #edit-btn:hover,
+.container .currentUser-reply .delete-btn #edit-btn:hover {
+  color: #6f6dc5;
+}
+
+.container .currentUser-comment .edit-btn #delete-btn,
+.container .currentUser-comment .delete-btn #delete-btn,
+.container .currentUser-reply .edit-btn #delete-btn,
+.container .currentUser-reply .delete-btn #delete-btn {
+  color: #e94747;
+}
+
+.container .currentUser-comment .edit-btn #delete-btn:hover,
+.container .currentUser-comment .delete-btn #delete-btn:hover,
+.container .currentUser-reply .edit-btn #delete-btn:hover,
+.container .currentUser-reply .delete-btn #delete-btn:hover {
+  color: #f86d6d;
+}
+
+.add-comment,
+.add-reply {
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 20px;
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  -webkit-box-shadow: 0 10px 10px rgba(0, 0, 0, 0.01);
+          box-shadow: 0 10px 10px rgba(0, 0, 0, 0.01);
+}
+
+.add-comment .image,
+.add-reply .image {
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+}
+
+.add-comment .image img,
+.add-reply .image img {
+  width: 50px;
+}
+
+.add-comment #send,
+.add-reply #send {
+  background-color: #4f4da0;
+  font-weight: 500;
+  font-size: 16px;
+  color: white;
+  padding: 15px 25px;
+  border-radius: 8px;
+  cursor: pointer;
+  -webkit-transition: 0.1s ease;
+  transition: 0.1s ease;
+}
+
+.add-comment #send:hover,
+.add-reply #send:hover {
+  background-color: #6f6dc5;
+}
+
+.add-comment #comment,
+.add-reply #comment {
+  width: 600px;
+}
+
+.add-comment {
+  width: 700px;
+}
+
+.add-reply {
+  width: 600px;
+}
+
+#comment {
+  max-height: 150px;
+  resize: none;
+  border-radius: 8px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  padding: 10px;
+  font-size: 16px;
+  color: #67727e;
+  overflow: auto;
+}
+
+textarea {
+  height: 100px;
+}
+
+@media (max-width: 767px) {
+  .container {
+    width: 375px;
+  }
+  .container .reply-container,
+  .container .currentUser-reply {
+    margin-left: unset;
+  }
+  .container .currentUser-reply,
+  .container .currentUser-comment {
+    width: 115%;
+  }
+  .container .currentUser-reply .person-info p,
+  .container .currentUser-comment .person-info p {
+    font-size: 12px;
+  }
+  .add-comment,
+  .add-reply,
+  .currentUser-comment,
+  .currentUser-reply,
+  .comment-container,
+  .reply-container {
+    width: 100%;
+  }
+  .add-comment .content .comment #comment,
+  .add-reply .content .comment #comment,
+  .currentUser-comment .content .comment #comment,
+  .currentUser-reply .content .comment #comment,
+  .comment-container .content .comment #comment,
+  .reply-container .content .comment #comment {
+    width: 300px;
+    height: 100px;
+  }
+  textarea {
+    height: 50px;
+  }
+}
+/*# sourceMappingURL=style.css.map */
